@@ -1,5 +1,7 @@
 html {
   font-family: sans-serif;
+  --border-width: 0.5rem;
+  --border-radius: 0.5rem;
 }
 
 ul{
@@ -28,5 +30,9 @@ gap: var(--gap);
 
 .card{
   flex: 1 1 100%;
+  border: solid var(--border-width) #000;
+  border-radius: var(--border-radius);
   background-color: var(--color);
+  color: var(--label-color);
+  font-size: 1em;
 }
