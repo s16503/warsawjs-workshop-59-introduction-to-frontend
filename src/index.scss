@@ -15,7 +15,7 @@ body{
   display: flex;
   align-items: center;
   background-color: snow;
-  justify-content: center;
+  justify-content: flex-start;
 
 }
 
@@ -24,6 +24,7 @@ body{
 --number-of-columns: 6;
 --border-radius: 1rem;
 --gap: 2rem;
+margin: auto;
 display: grid;
 grid-template-columns: repeat(var(--number-of-columns),1fr);
 // justify-content: center;

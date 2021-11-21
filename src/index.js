@@ -1,6 +1,8 @@
 import 'src/index.scss';
 import {colors} from 'src/data'
 import {findElement, cloneTemplateContent} from 'src/utils';
+import { Card } from './card';
+import { Board } from './board';
 
 const slotTemplate  = findElement(document,'#slot-template');
 const cardTemplate  = findElement(document,'#card-template');
@@ -15,7 +17,8 @@ function run() {
     // console.log('cardTemplate',cardTemplate)
     // console.log('cardTemplate',boardTemplate)
 
-    const boardElement = cloneTemplateContent(boardTemplate);
+    const board = new Board({template:boardTemplate, slotTemplate})
+    // const boardElement = cloneTemplateContent(boardTemplate);
 
     // console.log('slotElement', slotElement)
     // console.log('cardElement', cardElement)
@@ -25,15 +28,15 @@ function run() {
       console.log('color', color)
       console.log('label', labelColor)
 
-      const slotElement = cloneTemplateContent(slotTemplate);
-      const cardElement = cloneTemplateContent(cardTemplate);
-      cardElement.textContent = labelColor;
-      cardElement.style.backgroundColor = color
-      slotElement.appendChild(cardElement)
-      boardElement.appendChild(slotElement)
+      // const slotElement = cloneTemplateContent(slotTemplate);
+      const card = new Card({color, labelColor, template: cardTemplate})
+
+      // slotElement.appendChild(card.element)
+      // board.element.appendChild(slotElement)
+      board.addCard(card)
     })
 
-   document.body.prepend(boardElement)
+   document.body.prepend(board.element)
   }
 
 run();
