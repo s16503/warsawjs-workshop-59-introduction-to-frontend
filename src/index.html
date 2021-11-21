@@ -5,22 +5,14 @@
     <title>Memory Game</title>
   </head>
   <body>
-    <ul class="board">
-      <li class="slot">
-        <button class="card" style="--color: aqua; --label-color: black; ">aqua</button>
-      </li>
-      <li class="slot">
-        <button class="card" style="--color: brown; --label-color: white;">brown</button>
-      </li>
-      <li class="slot">
-        <button class="card" style="--color: black; --label-color: white;">black</button>
-      </li>
-    </ul>
   <template id="slot-template">
 <li class="slot"></li>
   </template>
   <template id="card-template">
-    <button class="card" style="--color: black; --label-color: white;"></button>
+    <button class="card" style="--color: black; --label-color: white;">Black</button>
+  </template>
+  <template id="board-template">
+    <ul class="board"></ul>
   </template>
   </body>
 </html>
